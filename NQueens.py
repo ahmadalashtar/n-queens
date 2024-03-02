@@ -10,6 +10,13 @@ class NQueens:
         if self.size < 4:
             return
         population = initializePopulation(populationSize,self.size)
-        evaluate(population)
-        
+        while (True):
+            # evaluate population
+            evaluate(population)
+            for chromosome in population:
+                if chromosome.fitness == 0:
+                    self.solution = chromosome
+                    return
+
+
         
