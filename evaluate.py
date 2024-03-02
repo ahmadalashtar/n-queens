@@ -14,3 +14,10 @@ def checkDiagonally(queens):
             if queens[i]==queens[j]+j-i or queens[j]==queens[i]+j-i:
                 violations += 1
     return violations
+
+def evaluate(population):
+    for chromosome in population:
+        fitness = 0
+        fitness += checkAdjacentCells(chromosome.queens)
+        fitness += checkDiagonally(chromosome.queens)
+        chromosome.fitness = fitness
