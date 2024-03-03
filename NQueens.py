@@ -9,6 +9,9 @@ class NQueens:
     def solve(self,populationSize):
         if self.size < 4:
             return
+        if populationSize%2 != 0:
+            return
+        
         population = initializePopulation(populationSize,self.size)
         while (True):
             # evaluate population
@@ -17,6 +20,6 @@ class NQueens:
                 if chromosome.fitness == 0:
                     self.solution = chromosome
                     return
-
+            
 
         
