@@ -19,10 +19,10 @@ def crossover(pool):
         firstPart = fatherQueens[0:crossoverSite]
         secondPart = motherQueens[0:crossoverSite]
         for j in range(len(firstPart)):
-            secondIndex = secondChild.index(firstPart[j])
+            secondIndex = secondChild.queens.index(firstPart[j])
             secondChild.queens[j], secondChild.queens[secondIndex] = secondChild.queens[secondIndex], secondChild.queens[j]
         for k in range(len(secondPart)):
-            firstIndex = firstChild.index(secondPart[k])
+            firstIndex = firstChild.queens.index(secondPart[k])
             firstChild.queens[k], firstChild.queens[firstIndex] = firstChild.queens[firstIndex], firstChild.queens[k]
 
         offsprings.append(firstChild)
