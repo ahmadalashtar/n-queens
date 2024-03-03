@@ -1,6 +1,12 @@
 from NQueens import NQueens
 
-nqueens = NQueens(10)
-nqueens.solve(15)
+queens = 4
+populationSize = 100
+maxTries = 100
+
+nqueens = NQueens(queens)
+
+nqueens.solve(populationSize, maxTries)
+
 print(nqueens.solution.queens)
 print(nqueens.solution.fitness)

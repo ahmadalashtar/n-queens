@@ -8,14 +8,14 @@ class NQueens:
         self.size = size
         self.solution = None
 
-    def solve(self,populationSize):
+    def solve(self,populationSize,maxTries):
         if self.size < 4:
             return
         if populationSize%2 != 0:
             return
         
         population = initializePopulation(populationSize,self.size)
-        while (True):
+        for i in range(maxTries):
             # evaluate population
             evaluate(population)
             for chromosome in population:
@@ -24,7 +24,9 @@ class NQueens:
                     return
             matingPool = selection(population)
             population = variation(matingPool)
-            
+        
+        return
+
             
 
         
