@@ -7,6 +7,7 @@ def crossover(pool):
     random.shuffle(pool)
     chromosome = pool[0]
     crossoverSite = random.randint(1,len(chromosome.queens)-1)
+    i = 0
     while (i < len(pool)-1):
         father = pool[i]
         mother = pool[i+1]
