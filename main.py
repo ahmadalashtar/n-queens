@@ -11,6 +11,10 @@ def main(queens, populationSize, maxTries):
         print("No solution found!")
         return
     print(nqueens.solution.queens)
+    print(nqueens.solution.cycles)
+
+    print(nqueens.solution.fitness)
+
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Solve N-Queens problem using Genetic Algorithm')

@@ -15,7 +15,7 @@ class NQueens:
         if populationSize%2 != 0:
             return
         
-        population = initializePopulation(populationSize,self.size,"new")
+        population = initializePopulation(populationSize,self.size,"original settler")
         for i in range(maxTries):
             evaluate(population)
             for chromosome in population:

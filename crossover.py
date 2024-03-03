@@ -15,8 +15,12 @@ def crossover(pool):
         secondChild = Chromosome()
         fatherQueens = father.queens
         motherQueens = mother.queens
+        fatherCycles = father.cycles
+        motherCycles = mother.cycles
         firstChild.queens = copy.deepcopy(fatherQueens)
         secondChild.queens = copy.deepcopy(motherQueens)
+        firstChild.cycles = copy.deepcopy(fatherCycles)
+        secondChild.cycles = copy.deepcopy(motherCycles)
         firstPart = fatherQueens[0:crossoverSite]
         secondPart = motherQueens[0:crossoverSite]
         for j in range(len(firstPart)):

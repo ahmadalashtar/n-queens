@@ -22,7 +22,7 @@ def selection(population):
 
         winner = cage[0]
 
-        winner.cycles.append("won")
+        winner.cycles.append("won the cage fight in selection to mate")
         pool.append(winner)
     
     return pool

@@ -7,7 +7,7 @@ def mutate(offsprings):
         for j in range(len(offsprings[0].queens)):
             mutationProbability = random.random()
             if mutationProbability <= probability:
-                offsprings[i].cycles.append("mutated")
+                offsprings[i].cycles.append("gene mutation")
                 randomIndex = random.randint(0,len(offsprings[0].queens)-1)
                 offsprings[i].queens[j], offsprings[i].queens[randomIndex]  = offsprings[i].queens[randomIndex],  offsprings[i].queens[j]
     
