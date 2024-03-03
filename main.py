@@ -1,5 +1,6 @@
 from NQueens import NQueens
 
-nqueens = NQueens(4)
+nqueens = NQueens(10)
 nqueens.solve(15)
-print(nqueens.solution)
+print(nqueens.solution.queens)
+print(nqueens.solution.fitness)
