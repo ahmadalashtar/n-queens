@@ -1,6 +1,6 @@
 from Chromosome import Chromosome
 import random
-
+import copy
 def crossover(pool):
     offsprings = []
 
@@ -12,16 +12,19 @@ def crossover(pool):
         mother = pool[i+1]
         firstChild = Chromosome()
         secondChild = Chromosome()
+        fatherQueens = father.queens
+        motherQueens = mother.queens
+        firstChild.queens = copy.deepcopy(fatherQueens)
+        secondChild.queens = copy.deepcopy(motherQueens)
+        firstPart = fatherQueens[0:crossoverSite]
+        secondPart = motherQueens[0:crossoverSite]
+        for j in range(len(firstPart)):
+            secondIndex = secondChild.index(firstPart[j])
+            secondChild.queens[j], secondChild.queens[secondIndex] = secondChild.queens[secondIndex], secondChild.queens[j]
+        for k in range(len(secondPart)):
+            firstIndex = firstChild.index(secondPart[k])
+            firstChild.queens[k], firstChild.queens[firstIndex] = firstChild.queens[firstIndex], firstChild.queens[k]
 
-        for j in range(len(chromosome.queens)):
-            if j < crossoverSite:
-                firstChild.queens.append(father.queens[j])
-                secondChild.queens.append(mother.queens[j])
-
-            else:
-                firstChild.queens.append(mother.queens[j])
-                secondChild.queens.append(father.queens[j])
-    
         offsprings.append(firstChild)
         offsprings.append(secondChild)
     
