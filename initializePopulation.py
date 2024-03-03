@@ -12,7 +12,7 @@ def initializePopulation(populationSize,chromosomeSize,cycle):
         chromosome = Chromosome()
         random.shuffle(allowedGenes)
         chromosome.queens = copy.deepcopy(allowedGenes)
-        chromosome.type.append(cycle)
+        chromosome.cycles.append(cycle)
         population.append(chromosome)
     return population
     
