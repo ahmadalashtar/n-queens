@@ -15,11 +15,9 @@ def selection(population):
     for i in range(len(population)):
         cage = []
 
-        for i in range(fightersCount):
-            index = random.randint(0,len(population)-1)
-            chromosome = population[index]
-            cage.append(chromosome)
-        
+        random.shuffle(population)
+        cage = population[0:fightersCount]
+    
         cage.sort(key=getFitness)
 
         winner = cage[0]
