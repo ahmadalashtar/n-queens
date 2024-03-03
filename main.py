@@ -9,4 +9,3 @@ nqueens = NQueens(queens)
 nqueens.solve(populationSize, maxTries)
 
 print(nqueens.solution.queens)
-print(nqueens.solution.fitness)

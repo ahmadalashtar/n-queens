@@ -16,11 +16,13 @@ def selection(population):
         cage = []
 
         for i in range(k):
-            index = random.randint(0,len(population))
+            index = random.randint(0,len(population)-1)
             chromosome = population[index]
             cage.append(chromosome)
         
-        winner = cage.sort(key=getFitness)[0]
+        cage.sort(key=getFitness)
+
+        winner = cage[0]
 
         pool.append(winner)
     
