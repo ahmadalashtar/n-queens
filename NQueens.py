@@ -15,7 +15,7 @@ class NQueens:
         if populationSize%2 != 0:
             return
         
-        population = initializePopulation(populationSize,self.size)
+        population = initializePopulation(populationSize,self.size,"new")
         for i in range(maxTries):
             evaluate(population)
             for chromosome in population:
@@ -24,7 +24,7 @@ class NQueens:
                     return
             matingPool = selection(population)
             offsprings = variation(matingPool)
-            extraPopulation = initializePopulation(len(population),len(population[0].queens))
+            extraPopulation = initializePopulation(len(population),len(population[0].queens),"extra")
             evaluate(extraPopulation)
             evaluate(offsprings)
             population = survive(offsprings, population, extraPopulation)

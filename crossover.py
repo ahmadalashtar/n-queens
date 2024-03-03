@@ -25,8 +25,10 @@ def crossover(pool):
             firstIndex = firstChild.queens.index(secondPart[k])
             firstChild.queens[k], firstChild.queens[firstIndex] = firstChild.queens[firstIndex], firstChild.queens[k]
         
+        firstChild.cycles.append("offspring")
+        secondChild.cycles.append("offspring")
         offsprings.append(firstChild)
         offsprings.append(secondChild)
         i += 2
-    
+
     return offsprings
