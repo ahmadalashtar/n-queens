@@ -8,14 +8,14 @@ def selection(population):
     pool = []
 
     if len(population)<6:
-        k = 2
+        fightersCount = 2
     else:
-        k = math.ceil(len(population)/5)
+        fightersCount = math.ceil(len(population)/5)
     
     for i in range(len(population)):
         cage = []
 
-        for i in range(k):
+        for i in range(fightersCount):
             index = random.randint(0,len(population)-1)
             chromosome = population[index]
             cage.append(chromosome)
