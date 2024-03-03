@@ -1,5 +1,7 @@
 from initializePopulation import initializePopulation
 from evaluate import evaluate
+from selection import selection
+from variation import variation
 
 class NQueens:
     def __init__(self,size):
@@ -20,6 +22,9 @@ class NQueens:
                 if chromosome.fitness == 0:
                     self.solution = chromosome
                     return
+            matingPool = selection(population)
+            population = variation(matingPool)
+            
             
 
         
