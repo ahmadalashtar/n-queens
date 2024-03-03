@@ -2,7 +2,7 @@ from initializePopulation import initializePopulation
 from evaluate import evaluate
 from selection import selection
 from variation import variation
-
+from survive import survive
 class NQueens:
     def __init__(self,size):
         self.size = size
@@ -23,7 +23,9 @@ class NQueens:
                     self.solution = chromosome
                     return
             matingPool = selection(population)
-            population = variation(matingPool)
+            offsprings = variation(matingPool)
+            evaluate(offsprings)
+            population = survive(offsprings,population)
         
         return
 

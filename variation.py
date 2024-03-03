@@ -4,7 +4,7 @@ import random
 
 def variation(pool):
     offsprings = crossover(pool)
-    population = mutate(offsprings)
-    return population
+    offsprings = mutate(offsprings)
+    return offsprings
 
 
