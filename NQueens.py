@@ -24,8 +24,10 @@ class NQueens:
                     return
             matingPool = selection(population)
             offsprings = variation(matingPool)
+            extraPopulation = initializePopulation(len(population),len(population[0].queens))
+            evaluate(extraPopulation)
             evaluate(offsprings)
-            population = survive(offsprings,population)
+            population = survive(offsprings, population, extraPopulation)
         
         return
 
